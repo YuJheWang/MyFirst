@@ -1,10 +1,14 @@
 #include <iostream>
+#include <test.hpp>
 
 using namespace std;
 
 int main()
 {
-    cout << "hello, world!" << endl;
+    S s;
+    s.num = 20;
+    s.str = "hello, world!";
+    cout << s.str << endl;
 
     return 0;
 }

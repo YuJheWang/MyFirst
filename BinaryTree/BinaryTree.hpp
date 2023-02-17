@@ -1,7 +1,8 @@
 #pragma once
 
 template <typename T>
-class BinaryTreeNode {
+class BinaryTreeNode 
+{
 public:
 
     T value;

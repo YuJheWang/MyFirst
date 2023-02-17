@@ -1,21 +1,30 @@
 #include "BinaryTree.hpp"
 
 template <typename T>
-void BinaryTreeNode<T>::Add(BinaryTreeNode<T>* node)
+void BinaryTreeNode<T>::Add(BinaryTreeNode<T>* node) 
 {
-    if (node->value < this->value) { 
+    if (node->value < this->value) 
+    { 
         if (this->left == nullptr) this->left = node;
         else this->left->Add(node);
-    } else {
+    } 
+    else 
+    {
         if (this->right == nullptr) this->right = node;
         else this->right->Add(node);
     }
 }
 
 template <typename T>
-BinaryTreeNode<T>* BinaryTreeNode<T>::Copy()
+void BinaryTreeNode<T>::Delete() 
 {
-    BinaryTreeNode<T>* result(value);
+    BinaryTreeNode<T>* tempLeft = left->Copy(), *tempRight = right->Copy();
+}
+
+template <typename T>
+BinaryTreeNode<T>* BinaryTreeNode<T>::Copy() 
+{
+    BinaryTreeNode<T>* result = new BinaryTreeNode<T>(value);
     if (left != nullptr)  result->left  = left->Copy();
     if (right != nullptr) result->right = right->Copy();
     return result;

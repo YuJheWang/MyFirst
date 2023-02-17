@@ -19,5 +19,8 @@ public:
 
     BinaryTreeNode* Copy();
 
-private:
+    BinaryTreeNode* GetLeftest();
+
+    BinaryTreeNode* GetRightest();
+
 };

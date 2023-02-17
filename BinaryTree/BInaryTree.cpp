@@ -37,3 +37,17 @@ BinaryTreeNode<T>* BinaryTreeNode<T>::Copy()
     if (right != nullptr) result->right = right->Copy();
     return result;
 }
+
+template <typename T>
+BinaryTreeNode<T> BinaryTreeNode<T>::GetLeftest()
+{
+    if (this->left == nullptr) return this;
+    else return (this->left->GetLeftest());
+}
+
+template <typename T>
+BinaryTreeNode<T> BinaryTreeNode<T>::GetRightest()
+{
+    if (this->right == nullptr) return this;
+    else return (this->right->GetRighest());
+}

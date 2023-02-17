@@ -5,12 +5,12 @@ void BinaryTreeNode<T>::Add(BinaryTreeNode<T>* node)
 {
     if (node->value < this->value) 
     { 
-        if (this->left == nullptr) this->left = node;
+        if (this->left == nullptr)  { this->left =  node; node->parent = this; }
         else this->left->Add(node);
     } 
     else 
     {
-        if (this->right == nullptr) this->right = node;
+        if (this->right == nullptr) { this->right = node; node->parent = this; }
         else this->right->Add(node);
     }
 }
@@ -18,7 +18,15 @@ void BinaryTreeNode<T>::Add(BinaryTreeNode<T>* node)
 template <typename T>
 void BinaryTreeNode<T>::Delete() 
 {
-    BinaryTreeNode<T>* tempLeft = left->Copy(), *tempRight = right->Copy();
+    BinaryTreeNode<T>* tempLeft{nullptr}, *tempRight{nullptr};
+    if (left != nullptr)  tempLeft  = left->Copy();
+    if (right != nullptr) tempRight = right->Copy();
+    if (left == nullptr) parent.Add(tempRight);
+    else 
+    {
+        parent->Add(tempLeft); parent.Add(tempRight);
+    }
+    delete left; delete right; delete this;
 }
 
 template <typename T>

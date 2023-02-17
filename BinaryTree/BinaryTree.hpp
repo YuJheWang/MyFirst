@@ -6,7 +6,7 @@ public:
 
     T value;
 
-    BinaryTreeNode* left{nullptr}, right{nullptr}, parent{nullptr};
+    BinaryTreeNode* left{nullptr}, *right{nullptr}, *parent{nullptr};
 
     BinaryTreeNode(T v) : value(v) {}
 

@@ -24,3 +24,12 @@ public:
     BinaryTreeNode* GetRightest();
 
 };
+
+template <typename Iter, typename T>
+BinaryTreeNode<T>* Read(Iter begin, Iter end)
+{
+    BinaryTreeNode<T>* result(*begin);
+    for (auto i = begin + 1; i != end; i++)
+        result->Add(*i);
+    return result;
+}

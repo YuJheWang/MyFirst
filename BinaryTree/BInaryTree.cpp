@@ -1,6 +1,12 @@
 #include "BinaryTree.hpp"
 
 template <typename T>
+void BinaryTreeNode<T>::Add(BinaryTreeNode<T>* node)
+{
+    
+}
+
+template <typename T>
 BinaryTreeNode<T>* BinaryTreeNode<T>::Copy()
 {
     BinaryTreeNode<T>* result(value);

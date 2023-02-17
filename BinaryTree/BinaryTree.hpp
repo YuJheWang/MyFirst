@@ -28,7 +28,7 @@ public:
 template <typename T, typename Iter>
 BinaryTreeNode<T>* Read(Iter begin, Iter end)
 {
-    BinaryTreeNode<T>* result(*begin);
+    BinaryTreeNode<T>* result = new BinaryTreeNode(*begin);
     for (auto i = begin + 1; i != end; i++)
         result->Add(*i);
     return result;

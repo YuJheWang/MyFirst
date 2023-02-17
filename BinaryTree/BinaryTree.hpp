@@ -30,6 +30,8 @@ BinaryTreeNode<T>* Read(Iter begin, Iter end)
 {
     BinaryTreeNode<T>* result = new BinaryTreeNode(*begin);
     for (auto i = begin + 1; i != end; i++)
-        result->Add(*i);
+        result->Add(new BinaryTreeNode<T>(*i));
     return result;
 }
+
+#include "BinaryTree.inl"

@@ -14,6 +14,7 @@ std::vector<T> sort(Iter begin, Iter end)
         result.push_back(leftest->value);
         leftest->Delete();
     }
+    return result;
 }
 
 int main()

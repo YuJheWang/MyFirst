@@ -21,10 +21,10 @@ void BinaryTreeNode<T>::Delete()
     BinaryTreeNode<T>* tempLeft{nullptr}, *tempRight{nullptr};
     if (left != nullptr)  tempLeft  = left->Copy();
     if (right != nullptr) tempRight = right->Copy();
-    if (left == nullptr) parent.Add(tempRight);
+    if (left == nullptr) parent->Add(tempRight);
     else 
     {
-        parent->Add(tempLeft); parent.Add(tempRight);
+        parent->Add(tempLeft); parent->Add(tempRight);
     }
     delete left; delete right; delete this;
 }
@@ -39,14 +39,14 @@ BinaryTreeNode<T>* BinaryTreeNode<T>::Copy()
 }
 
 template <typename T>
-BinaryTreeNode<T> BinaryTreeNode<T>::GetLeftest()
+BinaryTreeNode<T>* BinaryTreeNode<T>::GetLeftest()
 {
     if (this->left == nullptr) return this;
     else return (this->left->GetLeftest());
 }
 
 template <typename T>
-BinaryTreeNode<T> BinaryTreeNode<T>::GetRightest()
+BinaryTreeNode<T>* BinaryTreeNode<T>::GetRightest()
 {
     if (this->right == nullptr) return this;
     else return (this->right->GetRighest());

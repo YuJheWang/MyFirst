@@ -25,7 +25,7 @@ public:
 
 };
 
-template <typename Iter, typename T>
+template <typename T, typename Iter>
 BinaryTreeNode<T>* Read(Iter begin, Iter end)
 {
     BinaryTreeNode<T>* result(*begin);

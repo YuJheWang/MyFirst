@@ -26,7 +26,7 @@ void BinaryTreeNode<T>::Delete()
     {
         parent->Add(tempLeft); parent->Add(tempRight);
     }
-    delete left; delete right; delete this;
+    delete left; delete right;
 }
 
 template <typename T>
